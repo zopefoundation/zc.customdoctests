@@ -11,7 +11,7 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-name, version = 'zc.customdoctests', '0'
+name, version = 'zc.customdoctests', '0.1.0'
 
 install_requires = ['setuptools']
 extras_require = dict(test=['zope.testing', 'python-spidermonkey', 'manuel'])
