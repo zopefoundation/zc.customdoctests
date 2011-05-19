@@ -19,6 +19,8 @@ Or, with manuel::
             manuel.doctest.Manuel(parser=zc.customdoctests.js.eq_parser) +
             manuel.doctest.Manuel() +
             manuel.capture.Manuel(),
+            'spidermonkey.txt',
+            setUp=zc.customdoctests.js.spidermonkeySetUp)
             )
 
 An advantage of using manuel is that you can use multiple parsers in
