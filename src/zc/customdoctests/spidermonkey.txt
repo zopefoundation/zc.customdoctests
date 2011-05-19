@@ -23,6 +23,9 @@ Or, with manuel::
             setUp=zc.customdoctests.js.spidermonkeySetUp)
             )
 
+Note that zc.customdoctests doesn't require spidermonkey, so you need
+to install spidermonkey seperately if you want to use it.
+
 An advantage of using manuel is that you can use multiple parsers in
 the same document.  In the example, above, 2 javascript example
 syntaxes (described below) as well as the standard doctest syntax are
