@@ -11,7 +11,6 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-
 import doctest
 import re
 import sys
@@ -23,8 +22,12 @@ class DocTestParser(doctest.DocTestParser):
         ps1 = kw.pop('ps1', '>>>')
         comment_prefix = kw.pop('comment_prefix', '#')
         self.transform = kw.pop('transform', lambda s: s)
-        getattr(doctest.DocTestParser, '__init__', lambda : None)(*args, **kw)
-
+        try:
+            getattr(
+                doctest.DocTestParser, '__init__', lambda : None)(*args, **kw)
+        except TypeError:
+            # Python 3 support.
+            super(doctest.DocTestParser, self).__init__(*args, **kw)
         self._EXAMPLE_RE = re.compile(
             r'''
             # Source consists of a PS1 line followed by zero or more PS2 lines.

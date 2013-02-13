@@ -1,0 +1,16 @@
+=======
+CHANGES
+=======
+
+1.0.0 (unreleased)
+------------------
+
+- Added Python 3.3 support.
+
+- Cleanup `setup.py`, add `tox.ini` and manifest.
+
+
+0.1.0 (2011-05-19)
+------------------
+
+- Initial release
