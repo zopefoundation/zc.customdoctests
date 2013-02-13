@@ -22,7 +22,7 @@ extras_require = dict(
 
 setup(
     name = 'zc.customdoctests',
-    version='1.0.0',
+    version='1.0.1.dev0',
     url='http://pypi.python.org/pypi/zc.customdoctests',
     license = 'ZPL 2.1',
     description = open('README.txt').read().strip().split('\n')[0],
