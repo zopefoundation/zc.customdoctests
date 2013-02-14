@@ -1,5 +1,5 @@
 Custom doctest parsers
-======================
+----------------------
 
 zc.customdoctests provides a little bit of help with creating custom
 doctest parsers that work pretty muct like regular doctests, but that
@@ -9,7 +9,7 @@ zc.customdoctests.DocTestParser and pass any of the following options:
 ps1
    The first-line prompt, which defaultd to ``'>>>'``.
 
-   This must be a regular expression that matches exact;y 3 characters.
+   This must be a regular expression that matches exactly 3 characters.
 
    (Note that you can't override the second-line prompt.)
 

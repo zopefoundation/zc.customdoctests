@@ -1,27 +1,25 @@
 Javascript and Python-Spidermonkey support
-==========================================
+------------------------------------------
 
-This file shows some examples of using spidermonkey APIs in doctests.
+.. This file shows some examples of using spidermonkey APIs in doctests.
 
 To wire this up, you'd use something like::
 
    import doctest, zc.customdoctests.js
 
    test_suite = doctest.DocTestSuite(
-       parser = zc.customdoctests.js.parser,
-       setUp = zc.customdoctests.js.spidermonkeySetUp,
-       )
+       parser=zc.customdoctests.js.parser,
+       setUp=zc.customdoctests.js.spidermonkeySetUp)
 
 Or, with manuel::
 
     test_suite = manuel.testing.TestSuite(
-            manuel.doctest.Manuel(parser=zc.customdoctests.js.parser) +
-            manuel.doctest.Manuel(parser=zc.customdoctests.js.eq_parser) +
-            manuel.doctest.Manuel() +
-            manuel.capture.Manuel(),
-            'spidermonkey.txt',
-            setUp=zc.customdoctests.js.spidermonkeySetUp)
-            )
+        manuel.doctest.Manuel(parser=zc.customdoctests.js.parser) +
+        manuel.doctest.Manuel(parser=zc.customdoctests.js.eq_parser) +
+        manuel.doctest.Manuel() +
+        manuel.capture.Manuel(),
+        'spidermonkey.txt',
+        setUp=zc.customdoctests.js.spidermonkeySetUp)
 
 Note that zc.customdoctests doesn't require spidermonkey, so you need
 to install spidermonkey seperately if you want to use it.
@@ -29,7 +27,7 @@ to install spidermonkey seperately if you want to use it.
 An advantage of using manuel is that you can use multiple parsers in
 the same document.  In the example, above, 2 javascript example
 syntaxes (described below) as well as the standard doctest syntax are
-supported.  This document is run with manuel to allow all  3 syntaxes.
+supported.  This document is run with manuel to allow all 3 syntaxes.
 
 For the rest of this document, we'll show examples of JavaScript
 doctests as well as helper APIs used to support JavaScript and to

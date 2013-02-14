@@ -14,20 +14,28 @@
 import os
 from setuptools import setup, find_packages
 
+here = os.path.dirname(__file__)
+
+def read(filename):
+    with open(os.path.join(here, filename)) as f:
+        return f.read()
+
+
 install_requires = ['setuptools']
+
 extras_require = dict(
     test=['zope.testing', 'manuel'],
     js=['python-spidermonkey'],
-    )
+)
 
 setup(
-    name = 'zc.customdoctests',
+    name='zc.customdoctests',
     version='1.0.1.dev0',
     url='http://pypi.python.org/pypi/zc.customdoctests',
-    license = 'ZPL 2.1',
-    description = open('README.txt').read().strip().split('\n')[0],
-    author = 'Jim Fulton',
-    author_email = 'jim@zope.com',
+    license='ZPL 2.1',
+    description=read('README.txt').splitlines(False)[0],
+    author='Jim Fulton',
+    author_email='jim@zope.com',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -42,27 +50,25 @@ setup(
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Topic :: Software Development',
-        ],
-    long_description=(
-        open('README.txt').read() + '\n\n' +
-        open('CHANGES.txt').read() + '\n\n' +
-        '======================\n' +
-        'Detailed dcoumentation\n' +
-        '======================\n\n' +
-        open(os.path.join(os.path.dirname(__file__),
-                          'src', 'zc', 'customdoctests', 'README.txt')
-             ).read() + '\n\n' +
-        open(os.path.join(os.path.dirname(__file__),
-                          'src', 'zc', 'customdoctests', 'spidermonkey.txt')
-             ).read()
-        ),
+    ],
+    long_description=''.join([
+        read('README.txt'),
+        '\n\n'
+        'Detailed documentation\n'
+        '======================\n\n',
+        read('src/zc/customdoctests/README.txt'),
+        '\n\n',
+        read('src/zc/customdoctests/spidermonkey.txt'),
+        '\n\n',
+        read('CHANGES.txt'),
+    ]),
     packages=find_packages('src'),
-    package_dir = {'': 'src'},
-    namespace_packages = ['zc',],
-    install_requires = install_requires,
-    package_data = {'zc.customdoctests': ['*.txt']},
-    extras_require = extras_require,
-    tests_require = extras_require['test'],
-    test_suite = 'zc.customdoctests.tests.test_suite',
-    zip_safe = False,
-    )
+    package_dir={'': 'src'},
+    namespace_packages=['zc',],
+    install_requires=install_requires,
+    package_data={'zc.customdoctests': ['*.txt']},
+    extras_require=extras_require,
+    tests_require=extras_require['test'],
+    test_suite='zc.customdoctests.tests.test_suite',
+    zip_safe=False,
+)
