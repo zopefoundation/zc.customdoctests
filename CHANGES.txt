@@ -10,7 +10,7 @@ Changelog
 1.0.1 (2013-02-14)
 ------------------
 
-- Nothing changed yet.
+- Fixed ReStructuredText errors on the PyPI page.
 
 
 1.0.0 (2013-02-13)
