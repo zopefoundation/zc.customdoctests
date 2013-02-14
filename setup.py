@@ -30,7 +30,7 @@ extras_require = dict(
 
 setup(
     name='zc.customdoctests',
-    version='1.0.1.dev0',
+    version='1.0.1',
     url='http://pypi.python.org/pypi/zc.customdoctests',
     license='ZPL 2.1',
     description=read('README.txt').splitlines(False)[0],
